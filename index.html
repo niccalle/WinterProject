@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Webcam Test</title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <style type="text/css">
 	body {
@@ -26,16 +27,44 @@
 	.leftSideBar {
 		float: left;
 		padding: 10px;
+		padding-left: 0px;
+		width: 17%;
+		background-color: rgb(200,200,200);
 		border: 3px;
-		margin: 5px;
-		height: 400px;
-		border-style: double;
+		margin: 0px;
+		height: 700px;
+		
 	}
 
 	.video {
-		float: center;
-		margin-left: 30%;
-		margin-top: 20px;
+		margin-left: 25%;
+		margin-right: 25%;
+		margin-top: 0;
+		height: 100%;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+	}
+	ul {
+		list-style-type: none;
+		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif;
+		font-weight: lighter;
+		font-size: 20px;
+		padding-left: 30px;
+	}
+
+	li {
+		padding: 20px;
+		padding-left: 0px;
+	}
+
+	button {
+		margin-left: 45%;
+		margin-right: 45%;
+		width: 10%;
+		height:40px;
 	}
 
 </style>
@@ -44,7 +73,7 @@
 	<div id="header">
 		<p id="HeaderText"> Python Image Processing!</p>
 	</div>
-	<div class="leftSideBar">
+<!-- 	<div class="leftSideBar">
 		<ul>
 			<li>About Us</li>
 			<li>Login</li>
@@ -52,15 +81,17 @@
 			<li>Filler</li>
 			<li>Filler</li>
 		</ul>
-	</div>
+	</div> -->
 	<div class="video">
 		<video autoplay="true" id="videoElement">
 			
 		</video>
 	</div>
+	<button id="button">Yes!</button>
 	<script type="text/javascript">
 		var video = document.querySelector("#videoElement");
-		 
+		var button = document.querySelector("#button");
+
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 		 
 		if (navigator.getUserMedia) {       
